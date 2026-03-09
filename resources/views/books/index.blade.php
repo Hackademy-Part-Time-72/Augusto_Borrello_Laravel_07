@@ -4,6 +4,11 @@
 
 <h2>Lista Libri</h2>
 
+@if(session('success'))
+<div class="alert alert-success">
+{{ session('success') }}
+</div>
+@endif
 <table class="table">
     <thead>
         <tr>
@@ -21,11 +26,6 @@
             <td>{{ $book->pages }}</td>
             <td>{{ $book->year }}</td>
         </tr>
-      @if(session('success'))
-<div class="alert alert-success">
-    {{ session('success') }}
-</div>
-@endif
         @endforeach
     </tbody>
 </table>
